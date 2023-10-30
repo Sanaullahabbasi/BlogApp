@@ -118,7 +118,7 @@ function login(){
   }
   else{
     setTimeout(() => {
-      window.location.href = "./dashboard.html";
+      window.location.href = "./blog.html";
     }, 2000);
   }
 }
