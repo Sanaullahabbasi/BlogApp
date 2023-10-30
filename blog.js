@@ -62,4 +62,5 @@ function redirect(){
 
   var getText = quill.getText();
   console.log(getText)
+  // console.log(quill)
  
