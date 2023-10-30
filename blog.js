@@ -1,8 +1,8 @@
 
 function writeBlog(){
     var createBlog = document.getElementById('createBlog');
-        createBlog.innerHTML = `
-    <div class="blog-text">
+           createBlog.innerHTML = `
+        <div class="blog-text">
     <div class="blog-title">
       <input type="text" placeholder="Title" />
       <div class="form-floating">
@@ -21,7 +21,7 @@ function writeBlog(){
       </button>
     </div>
   </div> 
-    `
+      `
 }
 
 function postArticle(){
@@ -52,7 +52,14 @@ function redirect(){
     window.location.href = "./login.html"
   }
   function logout(){
-    // localStorage.clear();
     setTimeout(redirect, 1000)
   }
+
+
+  var quill = new Quill('#editor', {
+    theme: 'snow'
+  });
+
+  var getText = quill.getText();
+  console.log(getText)
  
