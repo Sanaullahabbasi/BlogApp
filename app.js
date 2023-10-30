@@ -57,7 +57,7 @@ function formRegister() {
     console.log(getUserData);
   
     setTimeout(() => {
-      window.location.href = "./dashboard.html";
+      window.location.href = "./blog.html";
     }, 2000);
   }
 
