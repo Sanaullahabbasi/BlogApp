@@ -1,1 +1,1 @@
-https://registrationfrombysanaullah.netlify.app/
+https://sanaullahblogapp.netlify.app/
