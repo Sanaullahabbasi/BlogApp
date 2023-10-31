@@ -45,16 +45,17 @@ function formRegister() {
       showConfirmButton: false,
       timer: 2000,
     });
-    var userData = {
+    var userData = [
+      {
       name: name.value,
       email: email.value,
       phoneNumber: phoneNumber.value,
       password: password.value,
       confirmPassword: confirmPassword.value,
-    };
+    }];
     localStorage.setItem("userData", JSON.stringify(userData));
     var getUserData = JSON.parse(localStorage.getItem("userData"));
-    console.log(getUserData);
+    // console.log(getUserData);
   
     setTimeout(() => {
       window.location.href = "./blog.html";

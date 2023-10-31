@@ -19,7 +19,10 @@
       src="https://kit.fontawesome.com/f6d3d555d8.js"
       crossorigin="anonymous"
     ></script>
-    <link href="https://cdn.quilljs.com/1.3.6/quill.snow.css" rel="stylesheet">
+    <link
+      href="https://cdn.quilljs.com/1.3.6/quill.snow.css"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="blog.css" />
   </head>
   <body>
@@ -36,13 +39,11 @@
       </div>
     </nav>
     <!-- blog post area -->
-    <div id="post">
-     
-    </div>
+    <div id="post"></div>
 
     <!-- Text Area -->
     <div id="createBlog">
-      
+      <div id="editor" style="display: none;"></div>
     </div>
     <div>
       <button class="btn btn-primary btn-write" onclick="writeBlog()">
@@ -50,12 +51,9 @@
       </button>
     </div>
     <div class="btn-lout">
-        <button onclick="logout()" class="btn-style">Logout</button>
+      <button onclick="logout()" class="btn-style">Logout</button>
     </div>
-    <div id="editor"></div>
 
-    <button id="new" onclick="chalja()">new post</button>
-    
     <script src="https://cdn.quilljs.com/1.3.6/quill.js"></script>
     <script src="blog.js"></script>
   </body>

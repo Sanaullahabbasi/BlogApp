@@ -60,6 +60,7 @@ body{
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
     margin: 15px;
     padding: 15px;
+    position: relative;
 }
 
 .blog-title > input{
@@ -95,8 +96,11 @@ body{
     align-items: center;
     justify-content: center;
     margin: 20px auto;
-    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-}
+  }
+  .btnPost{
+    position: absolute;
+    right: 5px;
+  }
 .btn-lout{
     position: absolute;
     right: 5px;
@@ -122,9 +126,7 @@ body{
       color: blue;
       transform: translateY(4px);
     }
-
-/* 
-    #new{
-        background-color: #05396b;
-        color: black;
-    } */
+  
+    .ql-editor, .ql-editor:active, .ql-editor:focus, .ql-editor:hover {
+        height: 55vh;
+    }

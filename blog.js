@@ -1,31 +1,45 @@
+
+
+
 function writeBlog() {
   var createBlog = document.getElementById("createBlog");
+  var editor = document.getElementById("editor");
   createBlog.innerHTML = `
-        <div class="blog-text">
-    <div class="blog-title">
-      <input type="text" placeholder="Title" />
-      <div class="form-floating">
-        <textarea
-          class="form-control text-area"
-          placeholder="Leave a comment here"
-          id="floatingTextarea"
-        ></textarea>
-        <label for="floatingTextarea">Write a article here</label>
-      </div>
-    </div>
-    <div class="btn-post">
-      <button class="btn btn-primary" onclick="postArticle()">
-        post
-        <i class="fa-solid fa-arrow-right"></i>
-      </button>
-    </div>
+  <div class="blog-text">
+  <div class="blog-title">
+  <input type="text" id="title" placeholder="Title" />
+  <div class="form-floating">
+  <div id="editor">
+  <textarea
+  class="form-control text-area"
+  placeholder="Leave a comment here"
+  id="floatingTextarea"
+  ></textarea>
+  </div>
+  </div>
+  </div>
+  <div class="btn-post">
+  <button class="btn btnPost btn-primary" onclick="postArticle()">
+  post
+  <i class="fa-solid fa-arrow-right"></i>
+  </button>
+  </div>
   </div> 
-      `;
+  `;
+  var quill = new Quill('#editor', {
+    theme: 'snow'
+  });
+
+  var textData = localStorage.setItem("textData", JSON.stringify(quill.getText()))
+  console.log(quill.getText())
 }
+
 
 function postArticle() {
   var post = document.getElementById("post");
   var createBlog = document.getElementById("createBlog");
+  var title = document.getElementById("title");
+  // var textValue = quill.getText();
   createBlog.style.display = "none";
   post.innerHTML = `
     <div class="row blog-area">
@@ -52,19 +66,4 @@ function redirect() {
 }
 function logout() {
   setTimeout(redirect, 1000);
-}
-
-var quill = new quill("#editor", {
-  theme: "snow",
-});
-
-//  setInterval(()=>{
-//   console.log(getText)
-//     }, 1000)
-// // console.log(quill)
-var btn = document.getElementById("new");
-function chalja() {
-  var value = quill.getText();
-  console.log(value);
-  console.log(quill);
 }
