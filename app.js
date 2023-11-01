@@ -1,3 +1,4 @@
+
 function formRegister() {
   event.preventDefault();
   var firstName = document.getElementById("firstName");
@@ -55,8 +56,6 @@ function formRegister() {
     };
     userData.push(obj);
     localStorage.setItem("userData", JSON.stringify(userData));
-    var getUserData = JSON.parse(localStorage.getItem("userData"));
-
     setTimeout(() => {
       window.location.href = "./blog.html";
     }, 2000);
