@@ -45,24 +45,22 @@ function formRegister() {
       showConfirmButton: false,
       timer: 2000,
     });
-    var userData = [
-      {
+    var userData = [];
+    var obj = {
       name: name.value,
       email: email.value,
       phoneNumber: phoneNumber.value,
       password: password.value,
       confirmPassword: confirmPassword.value,
-    }];
+    };
+    userData.push(obj);
     localStorage.setItem("userData", JSON.stringify(userData));
     var getUserData = JSON.parse(localStorage.getItem("userData"));
-    // console.log(getUserData);
-  
+
     setTimeout(() => {
       window.location.href = "./blog.html";
     }, 2000);
   }
-
-
 }
 
 function checkPassword() {
@@ -78,48 +76,30 @@ function checkPassword() {
   }
 }
 
-function welcome() {
-  var welcome = document.getElementById("welcome");
-  var getUserData = JSON.parse(localStorage.getItem("userData"));
-  welcome.innerHTML = `
-  <h1>Welcome to SMIT</h1>
-  <h6>Hi ${getUserData.name} </h6>
-  <p>your provided information are as follows </p>
-  <ul>
-    <li>Name : ${getUserData.name} </li>
-    <li>Email : ${getUserData.email} </li>
-    <li>Phone : ${getUserData.phoneNumber} </li>
-  </ul>
-  `;
+function redirect() {
+  window.location.href = "./index.html";
+}
+function logout() {
+  setTimeout(redirect, 2000);
 }
 
-welcome();
-
-function redirect(){
-  window.location.href = "./index.html"
-}
-function logout(){
-  // localStorage.clear();
-  setTimeout(redirect, 2000)
-}
-
-function login(){
+function login() {
   event.preventDefault();
   var email = document.getElementById("email");
   var password = document.getElementById("password");
   var loginData = JSON.parse(localStorage.getItem("userData"));
-  console.log(loginData)
-  if(email.value !== loginData.email){
-    emailError.innerHTML = `
+  for (var i = 0; i < loginData.length; i++) {
+    console.log(loginData[i].email);
+    if (email.value !== loginData[i].email) {
+      emailError.innerHTML = `
     <p class="err">*this email is not registered</p>`;
-  }
-  else if(password.value !== loginData.password){
-    passwordError.innerHTML = `
+    } else if (password.value !== loginData[i].password) {
+      passwordError.innerHTML = `
     <p class="err">*password is wrong</p>`;
-  }
-  else{
-    setTimeout(() => {
-      window.location.href = "./blog.html";
-    }, 2000);
+    } else {
+      setTimeout(() => {
+        window.location.href = "./blog.html";
+      }, 2000);
+    }
   }
 }
