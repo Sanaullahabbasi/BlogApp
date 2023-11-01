@@ -1,4 +1,4 @@
-
+var userData = [];
 function formRegister() {
   event.preventDefault();
   var firstName = document.getElementById("firstName");
@@ -46,7 +46,7 @@ function formRegister() {
       showConfirmButton: false,
       timer: 2000,
     });
-    var userData = [];
+    
     var obj = {
       name: name.value,
       email: email.value,
@@ -60,8 +60,8 @@ function formRegister() {
       window.location.href = "./blog.html";
     }, 2000);
   }
+  
 }
-
 function checkPassword() {
   var password = document.getElementById("password");
   var confirmPassword = document.getElementById("confirmPassword");

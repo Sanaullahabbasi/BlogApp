@@ -1,7 +1,7 @@
 var myData;
 function writeBlog() {
   var createBlog = document.getElementById("createBlog");
-  var editor = document.getElementById("editor");
+  // var editor = document.getElementById("editor");
   createBlog.innerHTML = `
   <div class="blog-text">
   <div class="blog-title">
@@ -74,6 +74,7 @@ function postArticle() {
   var post = document.getElementById("post");
   var createBlog = document.getElementById("createBlog");
   var title = document.getElementById("title");
+  
    createBlog.style.display = "none";
   
   post.innerHTML = `
